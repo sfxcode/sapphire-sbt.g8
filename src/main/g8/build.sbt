@@ -1,33 +1,42 @@
-import no.vedaadata.sbtjavafx.JavaFXPlugin.JFX
+import ReleaseTransformations._
 
 name := "$name$"
 
 organization := "$organization$"
 
-version := "$version$"
-
 scalaVersion := "$scala_version$"
 
-javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
-
-scalacOptions += "-target:jvm-1.7"
-
-javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
-
-scalacOptions += "-target:jvm-1.7"
 
 mainClass := Some("$package$.Application")
 
-libraryDependencies += "org.specs2" %% "specs2-core" % "3.6.6" % "test"
+libraryDependencies += "org.specs2" %% "specs2-core" % "4.3.5" % Test
 
 libraryDependencies +=   "com.sfxcode.sapphire" %% "sapphire-core" % "$sapphire_core_version$"
 
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.3"
+libraryDependencies +=   "com.sfxcode.extension" %% "sapphire-core" % "$sapphire_extension_version$"
+
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
+
+enablePlugins(BuildInfoPlugin)
+
+buildInfoPackage := "$package$"
+
+buildInfoOptions += BuildInfoOption.BuildTime
 
 
-jfxSettings
+enablePlugins(JavaFxPlugin)
 
-JFX.mainClass := Some("$package$.Application")
+javaFxMainClass := "$package$.Application"
 
-JFX.nativeBundles := "none"
+javaFxJvmargs := Seq("-Xms512m", "-Xmx1024m", "-XX:ReservedCodeCacheSize=128m")
+
+javaFxTitle := "DatabaseToolsFX"
+
+javaFxCategory := "Development Tools"
+
+// javaFxNativeBundles := "image"
+javaFxNativeBundles := "dmg"
+
+javaFxVerbose := true
+
 

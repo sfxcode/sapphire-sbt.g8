@@ -25,7 +25,7 @@ class ApplicationController extends AppController {
   }
 
   @Produces
-  def emptyName: ApplicationName = {
+  def applicationName: ApplicationName = {
     ApplicationName(conf.getString("application.name"))
   }
 }
