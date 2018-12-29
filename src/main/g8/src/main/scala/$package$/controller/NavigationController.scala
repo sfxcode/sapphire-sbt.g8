@@ -5,19 +5,16 @@ import javafx.scene.control.Button
 
 import scalafx.Includes._
 
-/**
-  * Created by tom on 20.10.15.
-  */
 class NavigationController extends AbstractViewController {
 
   def actionClickButton(event: ActionEvent) {
     logger.debug(event.toString)
-    val source = event.getSource
-
-    // resolve controller by getViewController lookup
-    val controller = getViewController[StatusBarController]()
-    controller.foreach(c => c.updateLabel(event.getSource.asInstanceOf[Button]))
+    statusBarController.updateLabel(event.getSource.asInstanceOf[Button])
   }
 
-
+  def actionHotReload(event: ActionEvent) {
+    applicationController.replacePrimarySceneContent()
+    logger.debug("Hot Reload Succeeded")
+    statusBarController.updateLabel(event.getSource.asInstanceOf[Button])
+  }
 }

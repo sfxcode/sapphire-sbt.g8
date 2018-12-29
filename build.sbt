@@ -4,7 +4,6 @@
 lazy val sapphire_sbt_g8 = (project in file(".")).
   settings(
     name := "sapphire-sbt-g8",
-    version in ThisBuild:= "1.0.0",
     test in Test := {
       val _ = (g8Test in Test).toTask("").value
     },

@@ -15,7 +15,7 @@ import scalafx.scene.layout.HBox
 
 @Named
 @ApplicationScoped
-class StatusBarController extends ViewController with LazyLogging {
+class StatusBarController extends AbstractViewController with LazyLogging {
 
   val actionLabel = new Label {
     text = "Status Bar Action Label ..."

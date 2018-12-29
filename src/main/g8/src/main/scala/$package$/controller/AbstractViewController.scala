@@ -2,12 +2,18 @@ package $package$.controller
 
 import com.sfxcode.sapphire.core.controller.ViewController
 import com.typesafe.scalalogging.LazyLogging
+import $package$.ApplicationController
 
 abstract class AbstractViewController extends ViewController with LazyLogging{
 
 
   override def didGainVisibility(): Unit = {
     statusBarController.statusLabel.text = "%s loaded".format(getClass.getSimpleName)
+  }
+
+  def applicationController:ApplicationController = {
+    getBean[ApplicationController]()
+
   }
 
   def mainWindowController:MainWindowController = {

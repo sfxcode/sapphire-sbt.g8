@@ -3,9 +3,7 @@ package $package$
 import javax.enterprise.context.ApplicationScoped
 import javax.enterprise.inject.Produces
 import javax.inject.Named
-
 import com.typesafe.config.ConfigFactory
-
 import com.sfxcode.sapphire.core.controller.AppController
 
 import $package$.controller.MainWindowController
@@ -27,6 +25,11 @@ class ApplicationController extends AppController {
   @Produces
   def applicationName: ApplicationName = {
     ApplicationName(conf.getString("application.name"))
+  }
+
+  def replacePrimarySceneContent(): Unit = {
+    val newMainWindowController = getController[MainWindowController]()
+    replaceSceneContent(newMainWindowController)
   }
 }
 
