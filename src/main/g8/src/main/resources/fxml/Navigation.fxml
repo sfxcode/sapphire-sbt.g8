@@ -9,7 +9,7 @@
     <children>
         <HBox layoutY="-10.0" prefHeight="40.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#actionClickButton" text="Navigation Button  3" />
+                <Button mnemonicParsing="false" onAction="#actionClickButton" text="Navigation Button" />
             <Button mnemonicParsing="false" onAction="#actionHotReload" text="Hot Reload FXML" textFill="RED" />
             </children>
             <padding>

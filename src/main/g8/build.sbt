@@ -10,6 +10,18 @@ mainClass := Some("$package$.Application")
 
 libraryDependencies += "org.specs2" %% "specs2-core" % "4.3.6" % Test
 
+val JavaFXVersion = "12.0.1"
+
+val osName = System.getProperty("os.name") match {
+  case n if n.startsWith("Linux") => "linux"
+  case n if n.startsWith("Mac") => "mac"
+  case n if n.startsWith("Windows") => "win"
+  case _ => throw new Exception("Unknown platform!")
+}
+
+libraryDependencies ++= Seq("base", "controls", "fxml", "graphics", "media", "swing", "web").map(m => "org.openjfx" % s"javafx-\$m" % JavaFXVersion classifier osName)
+
+
 libraryDependencies +=   "com.sfxcode.sapphire" %% "sapphire-core" % "$sapphire_core_version$"
 
 libraryDependencies +=   "com.sfxcode.sapphire" %% "sapphire-extension" % "$sapphire_extension_version$"

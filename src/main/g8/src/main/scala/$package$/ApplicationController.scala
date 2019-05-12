@@ -12,7 +12,6 @@ import $package$.controller.MainWindowController
 @Named
 @ApplicationScoped
 class ApplicationController extends AppController {
-  val conf = ConfigFactory.load()
 
   lazy val mainWindowController = getController[MainWindowController]()
 
@@ -24,10 +23,16 @@ class ApplicationController extends AppController {
 
   @Produces
   def applicationName: ApplicationName = {
-    ApplicationName(conf.getString("application.name"))
+    ApplicationName(configStringValue("application.name"))
   }
 
   def replacePrimarySceneContent(): Unit = {
+    // Styling
+    reloadStyles()
+    // Resources
+    applicationEnvironment.clearResourceBundleCache()
+    applicationEnvironment.loadResourceBundle("bundles/application")
+    // FXML
     val newMainWindowController = getController[MainWindowController]()
     replaceSceneContent(newMainWindowController)
   }

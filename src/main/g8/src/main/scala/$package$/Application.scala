@@ -1,7 +1,6 @@
 package $package$
 
 import com.sfxcode.sapphire.core.cdi.FXApp
-
 import com.typesafe.config.ConfigFactory
 
 import scalafx.application.JFXApp
@@ -16,9 +15,9 @@ object Application extends FXApp {
   override def applicationStage:Stage  = {
     val conf = ConfigFactory.load()
     new PrimaryStage {
-      title = "%s (%s)".format(conf.getString("project.name"), conf.getString("project.version"))
-      minHeight = conf.getInt("stage.default.height")
-      minWidth = conf.getInt("stage.default.width")
+      title = "%s (%s)".format(configStringValue("project.name"), BuildInfo.version)
+      minHeight = configIntValue("stage.default.height")
+      minWidth = configIntValue("stage.default.width")
       scene = new Scene {
       }
     }
