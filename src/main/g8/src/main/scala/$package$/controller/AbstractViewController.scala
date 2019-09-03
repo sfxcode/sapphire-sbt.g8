@@ -8,7 +8,7 @@ abstract class AbstractViewController extends ViewController with LazyLogging{
 
 
   override def didGainVisibility(): Unit = {
-    statusBarController.statusLabel.text = "%s loaded".format(getClass.getSimpleName)
+    statusBarController.statusLabel.setText("%s loaded".format(getClass.getSimpleName))
   }
 
   def applicationController:ApplicationController = {

@@ -8,9 +8,12 @@ scalaVersion := "$scala_version$"
 
 mainClass := Some("$package$.Application")
 
-libraryDependencies += "org.specs2" %% "specs2-core" % "4.3.6" % Test
+resolvers += "sfxcode-maven" at "https://bintray.com/sfxcode/maven/"
 
-val JavaFXVersion = "12.0.1"
+
+libraryDependencies += "org.specs2" %% "specs2-core" % "4.7.0" % Test
+
+val JavaFXVersion = "12.0.2"
 
 val osName = System.getProperty("os.name") match {
   case n if n.startsWith("Linux") => "linux"

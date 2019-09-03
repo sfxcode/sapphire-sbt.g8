@@ -9,9 +9,6 @@ import com.sfxcode.sapphire.core.controller.ViewController
 import com.sfxcode.sapphire.core.scene.{ContentDidChangeEvent, ContentManager}
 import com.typesafe.scalalogging.LazyLogging
 
-import scalafx.Includes._
-
-
 class MainWindowController extends ViewController with LazyLogging {
 
   @FXML

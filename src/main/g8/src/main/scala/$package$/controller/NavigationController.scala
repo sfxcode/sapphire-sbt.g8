@@ -3,8 +3,6 @@ package $package$.controller
 import javafx.event.ActionEvent
 import javafx.scene.control.Button
 
-import scalafx.Includes._
-
 class NavigationController extends AbstractViewController {
 
   def actionClickButton(event: ActionEvent) {
