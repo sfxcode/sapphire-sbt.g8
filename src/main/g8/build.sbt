@@ -11,9 +11,9 @@ mainClass := Some("$package$.Application")
 resolvers += "sfxcode-maven" at "https://bintray.com/sfxcode/maven/"
 
 
-libraryDependencies += "org.specs2" %% "specs2-core" % "4.7.0" % Test
+libraryDependencies += "org.specs2" %% "specs2-core" % "4.7.1" % Test
 
-val JavaFXVersion = "12.0.2"
+val JavaFXVersion = "13"
 
 val osName = System.getProperty("os.name") match {
   case n if n.startsWith("Linux") => "linux"
