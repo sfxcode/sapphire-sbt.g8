@@ -4,14 +4,14 @@ import javax.enterprise.context.ApplicationScoped
 import javax.enterprise.inject.Produces
 import javax.inject.Named
 import com.typesafe.config.ConfigFactory
-import com.sfxcode.sapphire.core.controller.AppController
+import com.sfxcode.sapphire.core.controller.DefaultWindowController
 
 import $package$.controller.MainViewController
 
 
 @Named
 @ApplicationScoped
-class ApplicationController extends AppController {
+class ApplicationController extends DefaultWindowController {
 
   lazy val mainViewController = getController[MainViewController]()
 
