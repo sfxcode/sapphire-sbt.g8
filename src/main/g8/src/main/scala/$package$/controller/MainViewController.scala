@@ -9,7 +9,7 @@ import com.sfxcode.sapphire.core.controller.ViewController
 import com.sfxcode.sapphire.core.scene.{ContentDidChangeEvent, ContentManager}
 import com.typesafe.scalalogging.LazyLogging
 
-class MainWindowController extends ViewController with LazyLogging {
+class MainViewController extends ViewController with LazyLogging {
 
   @FXML
   var menuBar: MenuBar = _
@@ -36,10 +36,5 @@ class MainWindowController extends ViewController with LazyLogging {
     statusBarManager = ContentManager(statusPane, this, statusBarController)
     workspaceManager = ContentManager(workspacePane, this, workspaceController)
   }
-
-  def listenToChanges(@Observes event: ContentDidChangeEvent) {
-    logger.debug(event.toString)
-  }
-
 
 }

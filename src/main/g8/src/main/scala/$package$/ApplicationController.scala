@@ -6,19 +6,19 @@ import javax.inject.Named
 import com.typesafe.config.ConfigFactory
 import com.sfxcode.sapphire.core.controller.AppController
 
-import $package$.controller.MainWindowController
+import $package$.controller.MainViewController
 
 
 @Named
 @ApplicationScoped
 class ApplicationController extends AppController {
 
-  lazy val mainWindowController = getController[MainWindowController]()
+  lazy val mainViewController = getController[MainViewController]()
 
   def applicationDidLaunch() {
     logger.info("start " + this)
     applicationEnvironment.loadResourceBundle("bundles/application")
-    replaceSceneContent(mainWindowController)
+    replaceSceneContent(mainViewController)
   }
 
   @Produces
@@ -33,8 +33,8 @@ class ApplicationController extends AppController {
     applicationEnvironment.clearResourceBundleCache()
     applicationEnvironment.loadResourceBundle("bundles/application")
     // FXML
-    val newMainWindowController = getController[MainWindowController]()
-    replaceSceneContent(newMainWindowController)
+    val newMainViewController = getController[MainViewController]()
+    replaceSceneContent(newMainViewController)
   }
 }
 

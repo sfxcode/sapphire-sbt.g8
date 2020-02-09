@@ -16,8 +16,8 @@ abstract class AbstractViewController extends ViewController with LazyLogging{
 
   }
 
-  def mainWindowController:MainWindowController = {
-    parent.asInstanceOf[MainWindowController]
+  def mainViewController:MainViewController = {
+    parent.asInstanceOf[MainViewController]
   }
 
   /**
@@ -30,6 +30,6 @@ abstract class AbstractViewController extends ViewController with LazyLogging{
     *
    * @return workspace manager resolved by parent
     */
-  def workspaceManager = mainWindowController.workspaceManager
+  def workspaceManager = mainViewController.workspaceManager
 
 }

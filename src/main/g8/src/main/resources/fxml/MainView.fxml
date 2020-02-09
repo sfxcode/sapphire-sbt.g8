@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400" minWidth="-Infinity" prefHeight="600.0"
             prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="$package$.controller.MainWindowController">
+            fx:controller="$package$.controller.MainViewController">
     <children>
         <MenuBar VBox.vgrow="NEVER" fx:id="menuBar">
             <menus>
