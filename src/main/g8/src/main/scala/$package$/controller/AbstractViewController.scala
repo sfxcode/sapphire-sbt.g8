@@ -16,9 +16,7 @@ abstract class AbstractViewController extends ViewController with LazyLogging{
 
   }
 
-  def mainViewController:MainViewController = {
-    parent.asInstanceOf[MainViewController]
-  }
+  def mainViewController:MainViewController = applicationController.mainViewController
 
   /**
     *
