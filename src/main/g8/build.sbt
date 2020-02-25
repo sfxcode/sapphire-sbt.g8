@@ -13,7 +13,7 @@ resolvers += "sfxcode-maven" at "https://bintray.com/sfxcode/maven/"
 
 libraryDependencies += "org.specs2" %% "specs2-core" % "4.7.1" % Test
 
-val JavaFXVersion = "13"
+val JavaFXVersion = "$javafx_version$"
 
 val osName = System.getProperty("os.name") match {
   case n if n.startsWith("Linux") => "linux"
