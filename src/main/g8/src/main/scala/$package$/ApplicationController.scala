@@ -1,17 +1,12 @@
 package $package$
 
-import javax.enterprise.context.ApplicationScoped
-import javax.enterprise.inject.Produces
-import javax.inject.Named
 import com.typesafe.config.ConfigFactory
-import com.sfxcode.sapphire.core.controller.DefaultWindowController
+import com.sfxcode.sapphire.core.controller.BaseApplicationController
+
 
 import $package$.controller.MainViewController
 
-
-@Named
-@ApplicationScoped
-class ApplicationController extends DefaultWindowController {
+class ApplicationController extends BaseApplicationController {
 
   lazy val mainViewController = getController[MainViewController]()
 
@@ -21,7 +16,6 @@ class ApplicationController extends DefaultWindowController {
     replaceSceneContent(mainViewController)
   }
 
-  @Produces
   def applicationName: ApplicationName = {
     ApplicationName(configStringValue("application.name"))
   }

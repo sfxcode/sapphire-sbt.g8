@@ -10,7 +10,7 @@ import $package$.ApplicationName
 class WorkspaceController extends AbstractViewController {
 
   @Inject
-  var applicationName: ApplicationName = _
+  var applicationName: ApplicationName = applicationController.applicationName
 
   @FXML
   var infoLabel: Label = _
