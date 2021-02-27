@@ -1,10 +1,8 @@
 package $package$
 
-import com.typesafe.config.ConfigFactory
-import com.sfxcode.sapphire.core.controller.BaseApplicationController
-
-
-import $package$.controller.MainViewController
+import com.name.app.controller.MainViewController
+import com.sfxcode.sapphire.javafx.controller.BaseApplicationController
+import com.sfxcode.sapphire.javafx.application.ApplicationEnvironment
 
 class ApplicationController extends BaseApplicationController {
 
@@ -12,7 +10,7 @@ class ApplicationController extends BaseApplicationController {
 
   def applicationDidLaunch() {
     logger.info("start " + this)
-    applicationEnvironment.loadResourceBundle("bundles/application")
+    ApplicationEnvironment.loadResourceBundle("bundles/application")
     replaceSceneContent(mainViewController)
   }
 
@@ -24,8 +22,8 @@ class ApplicationController extends BaseApplicationController {
     // Styling
     reloadStyles()
     // Resources
-    applicationEnvironment.clearResourceBundleCache()
-    applicationEnvironment.loadResourceBundle("bundles/application")
+    ApplicationEnvironment.clearResourceBundleCache()
+    ApplicationEnvironment.loadResourceBundle("bundles/application")
     // FXML
     val newMainViewController = getController[MainViewController]()
     replaceSceneContent(newMainViewController)

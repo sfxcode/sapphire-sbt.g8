@@ -1,15 +1,12 @@
 package $package$.controller
 
+import com.sfxcode.sapphire.javafx.controller.ViewController
 import com.typesafe.scalalogging.LazyLogging
 import javafx.geometry.Insets
 import javafx.scene.control.{Button, Label}
 import javafx.scene.layout.HBox
-import javax.enterprise.context.ApplicationScoped
-import javax.inject.Named
 
-@Named
-@ApplicationScoped
-class StatusBarController extends AbstractViewController with LazyLogging {
+class StatusBarController extends ViewController with LazyLogging {
 
   rootPane = new HBox()
 
@@ -20,16 +17,16 @@ class StatusBarController extends AbstractViewController with LazyLogging {
   statusLabel.setPadding(new Insets(5))
 
   val statusButton = new Button("Status Button 1")
-  statusButton.setOnAction(_ => {
+  statusButton.setOnAction { _ =>
     logger.debug("%s".format(statusButton.getText))
     updateLabel(statusButton)
-  })
+  }
 
   val statusButton2 = new Button("Status Button 2")
-  statusButton2.setOnAction(_ => {
+  statusButton2.setOnAction { _ =>
     logger.debug("%s".format(statusButton2.getText))
     updateLabel(statusButton2)
-  })
+  }
 
   val box = new HBox()
   box.setId("statusBar")
@@ -41,6 +38,8 @@ class StatusBarController extends AbstractViewController with LazyLogging {
   rootPane = box
 
   def updateLabel(button: Button): Unit = {
-    actionLabel.setText("%s clicked".format(button.getText))
+    val str = i18n("clickedMessage", button.getText, "!")
+    actionLabel.setText(str)
   }
+
 }

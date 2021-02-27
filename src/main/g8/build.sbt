@@ -25,9 +25,7 @@ val osName = System.getProperty("os.name") match {
 libraryDependencies ++= Seq("base", "controls", "fxml", "graphics", "media", "swing", "web").map(m => "org.openjfx" % s"javafx-\$m" % JavaFXVersion classifier osName)
 
 
-libraryDependencies +=   "com.sfxcode.sapphire" %% "sapphire-core" % "$sapphire_core_version$"
-
-libraryDependencies +=   "com.sfxcode.sapphire" %% "sapphire-extension" % "$sapphire_extension_version$"
+libraryDependencies +=   "com.sfxcode.sapphire" %% "sapphire-javafx" % "$sapphire_javafx_version$"
 
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 

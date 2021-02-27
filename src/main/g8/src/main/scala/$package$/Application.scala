@@ -1,8 +1,8 @@
 package $package$
 
-import com.sfxcode.sapphire.core.ConfigValues
-import com.sfxcode.sapphire.core.application.BaseApplication
-import com.sfxcode.sapphire.core.controller.BaseApplicationController
+import com.sfxcode.sapphire.javafx.ConfigValues
+import com.sfxcode.sapphire.javafx.application.BaseApplication
+import com.sfxcode.sapphire.javafx.controller.BaseApplicationController
 
 object Application extends BaseApplication with ConfigValues {
 

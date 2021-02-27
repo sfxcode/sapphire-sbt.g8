@@ -3,10 +3,9 @@ package $package$.controller
 import javafx.fxml.FXML
 import javafx.scene.control.MenuBar
 import javafx.scene.layout.Pane
-import javax.enterprise.event.Observes
 
-import com.sfxcode.sapphire.core.controller.ViewController
-import com.sfxcode.sapphire.core.scene.{ContentDidChangeEvent, ContentManager}
+import com.sfxcode.sapphire.javafx.controller.ViewController
+import com.sfxcode.sapphire.javafx.scene.{ContentDidChangeEvent, ContentManager}
 import com.typesafe.scalalogging.LazyLogging
 
 class MainViewController extends ViewController with LazyLogging {
@@ -23,7 +22,7 @@ class MainViewController extends ViewController with LazyLogging {
 
   lazy val workspaceController = getController[WorkspaceController]()
   lazy val navigationController = getController[NavigationController]()
-  lazy val statusBarController = getBean[StatusBarController]()
+  lazy val statusBarController: StatusBarController = new StatusBarController()
 
   var workspaceManager: ContentManager = _
   var navigationManager: ContentManager = _

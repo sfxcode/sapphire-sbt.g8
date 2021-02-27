@@ -1,6 +1,8 @@
 package $package$.controller
 
-import com.sfxcode.sapphire.core.controller.ViewController
+import com.sfxcode.sapphire.javafx.controller.ViewController
+import com.sfxcode.sapphire.javafx.application.ApplicationEnvironment
+
 import com.typesafe.scalalogging.LazyLogging
 import $package$.ApplicationController
 
@@ -16,11 +18,8 @@ abstract class AbstractViewController extends ViewController with LazyLogging{
 
   def mainViewController:MainViewController = applicationController.mainViewController
 
-  /**
-    *
-   * @return
-    */
-  def statusBarController = getBean[StatusBarController]()
+
+  def statusBarController: StatusBarController = mainViewController.statusBarController
 
   /**
     *
