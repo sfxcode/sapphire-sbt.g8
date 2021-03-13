@@ -1,16 +1,16 @@
 package $package$
 
 import com.name.app.controller.MainViewController
-import com.sfxcode.sapphire.javafx.controller.BaseApplicationController
-import com.sfxcode.sapphire.javafx.application.ApplicationEnvironment
+import com.sfxcode.sapphire.javafx.controller.SFXApplicationController
+import com.sfxcode.sapphire.javafx.application.SFXApplicationEnvironment
 
-class ApplicationController extends BaseApplicationController {
+class ApplicationController extends SFXApplicationController {
 
   lazy val mainViewController = getController[MainViewController]()
 
   def applicationDidLaunch() {
     logger.info("start " + this)
-    ApplicationEnvironment.loadResourceBundle("bundles/application")
+    SFXApplicationEnvironment.loadResourceBundle("bundles/application")
     replaceSceneContent(mainViewController)
   }
 

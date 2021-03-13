@@ -1,14 +1,14 @@
 package $package$
 
-import com.sfxcode.sapphire.javafx.ConfigValues
-import com.sfxcode.sapphire.javafx.application.BaseApplication
-import com.sfxcode.sapphire.javafx.controller.BaseApplicationController
+import com.sfxcode.sapphire.data.Configuration
+import com.sfxcode.sapphire.javafx.application.SFXApplication
+import com.sfxcode.sapphire.javafx.controller.SFXApplicationController
 
-object Application extends BaseApplication with ConfigValues {
+object Application extends SFXApplication with Configuration {
 
   override def title: String = configStringValue("project.name")
 
-  override val applicationController: BaseApplicationController = new ApplicationController
+  override val applicationController: SFXApplicationController = new ApplicationController
 
 }
 

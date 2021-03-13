@@ -4,11 +4,11 @@ import javafx.fxml.FXML
 import javafx.scene.control.MenuBar
 import javafx.scene.layout.Pane
 
-import com.sfxcode.sapphire.javafx.controller.ViewController
-import com.sfxcode.sapphire.javafx.scene.{ContentDidChangeEvent, ContentManager}
+import com.sfxcode.sapphire.javafx.controller.SFXViewController
+import com.sfxcode.sapphire.javafx.scene.{ContentDidChangeEvent, SFXContentManager}
 import com.typesafe.scalalogging.LazyLogging
 
-class MainViewController extends ViewController with LazyLogging {
+class MainViewController extends SFXViewController with LazyLogging {
 
   @FXML
   var menuBar: MenuBar = _
@@ -24,16 +24,16 @@ class MainViewController extends ViewController with LazyLogging {
   lazy val navigationController = getController[NavigationController]()
   lazy val statusBarController: StatusBarController = new StatusBarController()
 
-  var workspaceManager: ContentManager = _
-  var navigationManager: ContentManager = _
-  var statusBarManager: ContentManager = _
+  var workspaceManager: SFXContentManager = _
+  var navigationManager: SFXContentManager = _
+  var statusBarManager: SFXContentManager = _
 
   override def didGainVisibilityFirstTime() {
     menuBar.setUseSystemMenuBar(true)
 
-    navigationManager = ContentManager(navigationPane, this, navigationController)
-    statusBarManager = ContentManager(statusPane, this, statusBarController)
-    workspaceManager = ContentManager(workspacePane, this, workspaceController)
+    navigationManager = SFXContentManager(navigationPane, this, navigationController)
+    statusBarManager = SFXContentManager(statusPane, this, statusBarController)
+    workspaceManager = SFXContentManager(workspacePane, this, workspaceController)
   }
 
 }
