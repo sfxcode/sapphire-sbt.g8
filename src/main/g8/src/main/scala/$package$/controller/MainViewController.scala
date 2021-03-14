@@ -5,7 +5,7 @@ import javafx.scene.control.MenuBar
 import javafx.scene.layout.Pane
 
 import com.sfxcode.sapphire.javafx.controller.SFXViewController
-import com.sfxcode.sapphire.javafx.scene.{ContentDidChangeEvent, SFXContentManager}
+import com.sfxcode.sapphire.javafx.scene.SFXContentManager
 import com.typesafe.scalalogging.LazyLogging
 
 class MainViewController extends SFXViewController with LazyLogging {

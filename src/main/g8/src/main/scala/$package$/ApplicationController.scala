@@ -22,8 +22,8 @@ class ApplicationController extends SFXApplicationController {
     // Styling
     reloadStyles()
     // Resources
-    ApplicationEnvironment.clearResourceBundleCache()
-    ApplicationEnvironment.loadResourceBundle("bundles/application")
+    SFXApplicationEnvironment.clearResourceBundleCache()
+    SFXApplicationEnvironment.loadResourceBundle("bundles/application")
     // FXML
     val newMainViewController = getController[MainViewController]()
     replaceSceneContent(newMainViewController)
